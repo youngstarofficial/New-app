@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome ❤️</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Fullscreen Center */
+    body, html {
+      height: 100%;
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3, #8e44ad);
+      background-size: 300% 300%;
+      animation: gradientBG 12s ease infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    /* Background gradient animation */
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .welcome-container {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 50px 70px;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(255,255,255,0.3);
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .welcome-container h1 {
+      margin-bottom: 20px;
+      font-size: 42px;
+      animation: bounce 2s infinite;
+    }
+
+    .welcome-container h2 {
+      margin-bottom: 35px;
+      font-size: 24px;
+      color: #ffdfdf;
+      animation: fadeInUp 2s ease-in-out;
+    }
+
+    .welcome-container button {
+      padding: 14px 40px;
+      font-size: 20px;
+      font-weight: bold;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      background: linear-gradient(45deg, #ff416c, #ff4b2b);
+      color: white;
+      box-shadow: 0 0 20px rgba(255, 75, 43, 0.7);
+      transition: 0.3s ease;
+      animation: floating 3s ease-in-out infinite;
+    }
+
+    .welcome-container button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.9);
+    }
+
+    /* Floating button animation */
+    @keyframes floating {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-12px); }
+      100% { transform: translateY(0px); }
+    }
+
+    /* Bounce for title */
+    @keyframes bounce {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    /* Fade animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="welcome-container">
+    <h1>❤️ Welcome ❤️</h1>
+    <h2>✨ RMR❤️ Presents ✨</h2>
+    <button id="openBtn">💕 Open </button>
+  </div>
+
+  <script>
+    document.getElementById("openBtn").addEventListener("click", () => {
+      window.location.href = "students.html"; // go to students page
+    });
+  </script>
+</body>
+</html>

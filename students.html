@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TSEAMCET - 2023 Last Rank Statement</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Student portal👨‍🎓🧑‍🎓</h1>
+
+    <!-- Filter Form -->
+    <div class="filter-form">
+
+      <!-- Left Box: Student Info -->
+      <div class="filter-box filter-left">
+        <h2>Enter Student Info</h2>
+        <input type="text" id="name" placeholder="Student Name">
+        <input type="number" id="rank" placeholder="Rank">
+        <select id="studentCaste">
+          <option value="">-- Select Caste --</option>
+          <option value="OC Boys">OC Boys</option>
+          <option value="OC Girls">OC Girls</option>
+          <option value="BC-A Boys">BC-A Boys</option>
+          <option value="BC-A Girls">BC-A Girls</option>
+          <option value="BC-B Boys">BC-B Boys</option>
+          <option value="BC-B Girls">BC-B Girls</option>
+          <option value="BC-C Boys">BC-C Boys</option>
+          <option value="BC-C Girls">BC-C Girls</option>
+          <option value="BC-D Boys">BC-D Boys</option>
+          <option value="BC-D Girls">BC-D Girls</option>
+          <option value="BC-E Boys">BC-E Boys</option>
+          <option value="BC-E Girls">BC-E Girls</option>
+          <option value="SC Boys">SC Boys</option>
+          <option value="SC Girls">SC Girls</option>
+          <option value="ST Boys">ST Boys</option>
+          <option value="ST Girls">ST Girls</option>
+          <option value="EWS GEN OU">EWS GEN OU</option>
+          <option value="EWS GIRLS OU">EWS GIRLS OU</option>
+        </select>
+      </div>
+
+      <!-- Middle Buttons -->
+      <div class="filter-box filter-middle">
+        <div class="button-group">
+          <button id="searchBtn">🔍 Search</button>
+          <button id="resetBtn">♻ Reset</button>
+          <button id="downloadBtn">📥 Download PDF</button>
+        </div>
+      </div>
+
+      <!-- Right Box: Filters -->
+      <div class="filter-box filter-right">
+        <h2>Filters</h2>
+
+        <!-- ✅ Branch Dropdown -->
+        <select id="branch">
+          <option value="">-- Select Branch --</option>
+          <option value="CSE">CSE</option>
+          <option value="ECE">ECE</option>
+          <option value="EEE">EEE</option>
+          <option value="MECH">MECH</option>
+          <option value="CIVIL">CIVIL</option>
+        </select>
+
+        <!-- ✅ District Codes -->
+        <select id="district">
+          <option value="">-- Select District --</option>
+          <option value="01">01 - Hyderabad</option>
+          <option value="02">02 - Rangareddy</option>
+          <option value="03">03 - Medchal</option>
+          <option value="04">04 - Nalgonda</option>
+          <option value="05">05 - Khammam</option>
+          <option value="06">06 - Warangal</option>
+          <option value="07">07 - Karimnagar</option>
+          <option value="08">08 - Nizamabad</option>
+          <option value="09">09 - Adilabad</option>
+          <option value="10">10 - Mahbubnagar</option>
+        </select>
+
+        <!-- ✅ Caste Filter Dropdown -->
+        <select id="filterCaste">
+          <option value="">-- Filter by Caste --</option>
+          <option value="OC Boys">OC Boys</option>
+          <option value="OC Girls">OC Girls</option>
+          <option value="BC-A Boys">BC-A Boys</option>
+          <option value="BC-A Girls">BC-A Girls</option>
+          <option value="BC-B Boys">BC-B Boys</option>
+          <option value="BC-B Girls">BC-B Girls</option>
+          <option value="BC-C Boys">BC-C Boys</option>
+          <option value="BC-C Girls">BC-C Girls</option>
+          <option value="BC-D Boys">BC-D Boys</option>
+          <option value="BC-D Girls">BC-D Girls</option>
+          <option value="BC-E Boys">BC-E Boys</option>
+          <option value="BC-E Girls">BC-E Girls</option>
+          <option value="SC Boys">SC Boys</option>
+          <option value="SC Girls">SC Girls</option>
+          <option value="ST Boys">ST Boys</option>
+          <option value="ST Girls">ST Girls</option>
+          <option value="EWS GEN OU">EWS GEN OU</option>
+          <option value="EWS GIRLS OU">EWS GIRLS OU</option>
+        </select>
+
+        <!-- ✅ Min/Max Rank filters -->
+        <input type="number" id="minRank" placeholder="Min Rank">
+        <input type="number" id="maxRank" placeholder="Max Rank">
+      </div>
+    </div>
+
+    <!-- Table -->
+    <table id="studentTable">
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Institute Name</th>
+          <th>Place</th>
+          <th>Dist Code</th>
+          <th>Branch Code</th>
+          <th>Branch Name</th>
+          <th>OC Boys</th>
+          <th>OC Girls</th>
+          <th>BC-A Boys</th>
+          <th>BC-A Girls</th>
+          <th>BC-B Boys</th>
+          <th>BC-B Girls</th>
+          <th>BC-C Boys</th>
+          <th>BC-C Girls</th>
+          <th>BC-D Boys</th>
+          <th>BC-D Girls</th>
+          <th>BC-E Boys</th>
+          <th>BC-E Girls</th>
+          <th>SC Boys</th>
+          <th>SC Girls</th>
+          <th>ST Boys</th>
+          <th>ST Girls</th>
+          <th>EWS GEN OU</th>
+          <th>EWS GIRLS OU</th>
+          <th>Tuition Fee</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Students data dynamically inserted here -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+  <script src="students.js"></script>
+</body>
+</html>
